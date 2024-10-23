@@ -49,11 +49,17 @@ class App extends React.Component {
           category: 'chair',
           price: '69.99',
         },
+        {
+          id: 6,
+          title: 'bed',
+          img: 'bed.jpg',
+          desc: 'ables are settlement and world objects in Fallout 4 and its add-on Vault-Tec Workshop. The bed are located under Furniture → Bed in the workshop.',
+          category: 'bed',
+          price: '769.99',
+        },
       ]
     }
-
   }
-
 
   render() {
     return (

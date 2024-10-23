@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +12,10 @@ body {
 .App {
   width: 1280px;
   margin: 50px auto;
+}
+
+header {
+  position: relative;
 }
 header .logo {
   font-weight: 600;
@@ -32,8 +34,29 @@ header ul.nav li {
   transition: opacity 500ms ease;
 }
 
-header ul.nav li:hover {
-  opacity: 0.5;
+header  .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color 500ms ease;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+  color: #dc3d3d;
+}
+
+header .shop-cart {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 450px;
+  min-height: 100px; /*позже убери - это тест*/
+  background: #fafafa;
+  box-shadow: 6px 5px 31px -11px rgba(26,22,22,1);
+  -webkit-box-shadow: 6px 5px 31px -11px rgba(26,22,22,1);
+  -moz-box-shadow: 6px 5px 31px -11px rgba(26,22,22,1);
+  z-index: 10;
+
 }
 
 header .presentation {
@@ -47,8 +70,6 @@ header .presentation {
   height: 500px;
   position: relative;
 }
-
-
 
 header .presentation::after {
   content: 'Best things for your house';
