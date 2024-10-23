@@ -1,7 +1,24 @@
 import React from 'react';
 import { FaShoppingCart } from "react-icons/fa";
+import Order from "./Order";
 
-export const Header = () => {
+const showOrders = (props) => {
+    return (<div>
+        {props.orders.map(el => (
+            <Order key={el.id} item={el} />
+        ))}
+    </div>)
+}
+
+const showNothing = () => {
+    return (<div className={'empty'}>
+        <h2>The cart is empty</h2>
+    </div>)
+}
+
+
+
+export const Header = (props) => {
     const [cartOpen, setCartOpen] = React.useState(false);
 
   return (
@@ -18,7 +35,10 @@ export const Header = () => {
 
             {cartOpen && (
                 <div className={'shop-cart'}>
-                    <h1>SHOP-CART</h1>
+                    {props.orders.length > 0 ?
+                        showOrders(props) : showNothing()
+                    }
+
                 </div>
             )};
         </div>
